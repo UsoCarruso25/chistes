@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jokes App 😂 — Mejorada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="splash" class="splash">
+    <div class="splash-card">
+      <div class="logo">😂</div>
+      <h1>Jokes App</h1>
+      <p>Ríe un poco — chistes cortos y largos</p>
+      <div class="loader"></div>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="brand">Jokes App <span class="dot">•</span></div>
+    <nav>
+      <button id="btn-home" class="nav-btn active">Chistes</button>
+      <button id="btn-short" class="nav-btn">Cortos</button>
+      <button id="btn-long" class="nav-btn">Largos</button>
+      <button id="btn-info" class="nav-btn">Info</button>
+    </nav>
+    <div class="actions">
+      <button id="btn-refresh" class="btn">Recargar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="jokes-section" class="panel">
+      <div class="controls">
+        <label>Fuente: <select id="amount"><option value="10">10 chistes</option><option value="20">20 chistes</option></select></label>
+        <label>Tipo: 
+          <select id="type">
+            <option value="single">Solo</option>
+            <option value="twopart">Dos partes</option>
+            <option value="any" selected>Any</option>
+          </select>
+        </label>
+      </div>
+      <ul id="jokes-list" class="jokes-list"></ul>
+    </section>
+
+    <section id="info-section" class="panel hidden">
+      <h2>Acerca de Jokes App</h2>
+      <p>Aplicación creada por <strong>Brayan Felipe Moya Valiente</strong>. Presenta chistes obtenidos desde <a href="https://v2.jokeapi.dev/" target="_blank">JokeAPI</a>. Incluye favoritos, compartir y clasificación automática en cortos y largos.</p>
+      <h3>Instrucciones</h3>
+      <ul>
+        <li>Pulsa <strong>Recargar</strong> para obtener nuevos chistes.</li>
+        <li>Usa los botones de la lista para copiar, compartir o marcar como favorito.</li>
+        <li>Los chistes largos y cortos se clasifican automáticamente por longitud.</li>
+      </ul>
+    </section>
+  </main>
+
+  <template id="joke-item">
+    <li class="joke-card">
+      <div class="joke-text"></div>
+      <div class="joke-actions">
+        <button class="btn copy">Copiar</button>
+        <button class="btn fav">⭐</button>
+        <button class="btn share">Compartir</button>
+      </div>
+    </li>
+  </template>
+
+  <footer class="app-footer">
+    <small>Desarrollado por Brayan Felipe Moya Valiente ✨ — Datos desde JokeAPI</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
